@@ -5,7 +5,9 @@ html, body {
 .container {
     background-color: #2b2d2f;
     position: relative;
-    /* height:1200px; */
+    height:200px;
+    /* overflow-x: scroll; */
+    /* width: 3000px; */
 }
 
 .element {
@@ -19,54 +21,54 @@ html, body {
 #yellow-box {
     background-color: #ffff00;
     /* /* Fill these in */
-    position: ;
+    position: static;
     bottom: 0;
-    left: 0;
+    left: 1000px;
     right: 0;
-    top: 0;
-    z-index: ;
+    top: 500px;
+    z-index: -10000;
 }
 
 #pink-box {
     background-color: #ff69b4;
-    /* Fill these in
-    position: ;
+    /* /* Fill these in */
+    position: relative;
     bottom: 0;
-    left: 0;
+    left: 40px;
     right: 0;
-    top: 0;
-    z-index: ;
+    top: 100px;
+    z-index: 1000;
 }
 
 #blue-box {
     background-color: #00eeee;
-    /* Fill these in
-    position: ;
+    /* /* Fill these in */
+    position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50px;
     right: 0;
-    top: 0;
-    z-index: ;
+    top: 90px;
+    z-index: -3;
 }
 
 #red-box {
     background-color: #ff0000;
-    /* Fill these in
-    position: ;
+    /* /* Fill these in */
+    position: sticky;
     bottom: 0;
-    left: 0;
+    left: 500px;
     right: 0;
-    top: 0;
-    z-index: ;
+    top: 50px;
+    z-index:-9;
 }
 
 #orange-box {
     background-color: #ffa500;
-    /* Fill these in
-    position: ;
+    /* /* Fill these in */
+    position:fixed;
     bottom: 0;
-    left: 0;
+    left: 450px;
     right: 0;
-    top: 0;
-    z-index: ;
+    top: 100px;
+    z-index: -10;
 }
