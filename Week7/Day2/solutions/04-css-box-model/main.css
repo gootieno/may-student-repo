@@ -1,3 +1,5 @@
+/* reset css styles go here first */
+
 html, body {
     /* DO NOT EDIT */
     font-family: sans-serif;
@@ -10,11 +12,15 @@ html, body {
     vertical-align: bottom;
 
     /* Your code here */
+    width: 30px;
+    height: 30px;
+    margin-bottom: 3px;
 }
 
 
 h1 {
     /* Your code here */
+    display:inline;
 }
 
 /* Phase 2 */
@@ -24,10 +30,18 @@ h1 {
     vertical-align: top;
 
     /* Your code here */
+    border: 4px dotted black;
+    background-color: yellow;
+    width: 120px;
+    height: 120px;
+
+    margin: 0px 0px 10px 10px;
+    padding: 20px;
 }
 
 .alternate {
     /* Your code here */
+    box-sizing: border-box;
 }
 
 /* Phase 3 */
