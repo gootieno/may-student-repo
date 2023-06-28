@@ -85,13 +85,43 @@ header {
 /* ----- Phase 1 - Moderate Screen ----- */
 
 /* Your code here */
-
+@media screen and (min-width: 821px){
+    .content {
+        /* border: 2px solid red; */
+        flex-direction: row;
+    }
+}
 /* ----- Phase 1 - Wide Screen ----- */
 
 /* Your code here */
 
+@media screen and (min-width: 1220px){
+    .page {
+        flex-direction: row;
+    }
+}
 /* ===== PRINTING ===== */
 
 /* Phase 2 */
 
 /* Your code here */
+@media print {
+    header, .sidebar {
+        display: none;
+    }
+
+    .story-box {
+        padding: 0;
+        border-radius: none;
+        background-color: white;
+        filter:none;
+    }
+
+    .image-box {
+        height: 80px;
+        width: 80px;
+        position: absolute;
+        right:  45px;
+        top: 45px;
+    }
+}
