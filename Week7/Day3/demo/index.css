@@ -1,0 +1,21 @@
+#boxes-container {
+    height: 300px;
+    border: 2px solid black;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div.box-items {
+    height: 200px;
+    border: 2px solid black;
+    width: 200px;
+}
+
+#numbers-box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20%;
+}
