@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="index.css" rel="stylesheet">
+    <title>Medium2</title>
+</head>
+<body>
+    <div id="header-container">
+        <div id="logo-container">
+            <img id='logo-img'src="https://cdn-icons-png.flaticon.com/512/5968/5968885.png">
+            <h2 id="logo-heading">Medium</h2>
+        </div>
+
+        <nav id="nav-container">
+            <a href="#" class="nav-links">Our story</a>
+            <a href="#" class="nav-links">Membership</a>
+            <a href="#" class="nav-links">Write</a>
+            <a href="#" class="nav-links">Sign In</a>
+            <a href="#" class="nav-links nav-button">Get started</a>
+        </nav>
+    </div>
+
+    <div id="curious-eminem-container">
+        <div id="stay-curious-container">
+            <h2 id="curious-heading" class='curious-content'>Stay curious</h2>
+            <p class="curious-content">
+                Discover stories, thinking, 
+                and expertise from writers on any topic.
+            </p>
+            <a class="nav-button curious-button"  href="">Start reading</a>
+        </div>
+    
+        <div id="eminem-container">
+            <span>M</span>
+        </div>
+    </div>
+    <script>
+        const emContainer = document.getElementById('eminem-container')
+
+        for(let i = 0; i < 500; i++){
+            const span = document.createElement('span')
+            span.innerText = "M"
+            emContainer.append(span)
+        }
+    </script>
+</body>
+</html>

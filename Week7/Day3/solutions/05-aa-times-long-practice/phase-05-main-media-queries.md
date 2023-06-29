@@ -13,9 +13,7 @@ media query into **main-content.html**
 
 ## Small screens
 
-When the page is less than 1000 pixels wide, remove the interests bar. You have
-already implemented this media query in phase 3, but now is a great time to test
-that the content is still rendering as expected.
+When the page is less than 1000 pixels wide, remove the interests bar.
 
 ![aa-times-small]
 

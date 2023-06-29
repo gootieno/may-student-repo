@@ -1,0 +1,90 @@
+:root {
+    --medium-yellow: #FFC017
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 1200px;
+}
+
+#header-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 60px;
+    border-bottom: 1px solid black;
+    background-color:  var(--medium-yellow);
+    position: sticky;
+    top: 0;
+}
+
+#logo-container {
+    display: flex;
+    align-items: center;
+}
+
+#logo-img {
+    height: 2rem;
+}
+
+#nav-container {
+    display: flex;
+    gap: 15px;
+    align-items:center;
+}
+
+.nav-links {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-button {
+    padding: 8px 20px;
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+}
+
+#curious-eminem-container {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid black;
+    background-color: var(--medium-yellow);
+    padding-bottom: 10px;
+}
+
+#stay-curious-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 80px;
+    margin-right: 80px;
+    width: 40%;
+}
+
+#eminem-container {
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#curious-heading {
+    font-size: 5rem;
+}
+
+p.curious-content {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#stay-curious-container > a {
+    text-decoration: none;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: fit-content
+}
+
