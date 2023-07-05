@@ -107,7 +107,9 @@ const server = http.createServer((req, res) => {
     }
 
     // Your code here
-
+    if (req.method === 'POST' && req.url === '/cats') {
+      const {name, age, color, description } = req.body
+    }
     res.statusCode = 404;
     res.end("Page Not Found");
     return;

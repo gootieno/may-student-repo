@@ -20,16 +20,17 @@ const server = http.createServer((req, res) => {
   req.on("end", () => {
     // Parsing the body of the request
     if (reqBody) {
-
+      // "username=app+appacademy&password=password%21"
       req.body = reqBody
-        .split("&")
-        .map((keyValuePair) => keyValuePair.split("="))
-        .map(([key, value]) => [key, value.replace(/\+/g, " ")])
-        .map(([key, value]) => [key, decodeURIComponent(value)])
+        .split("&") //[username=app+academy, password=password%21]
+        .map((keyValuePair) => keyValuePair.split("=")) //[[username, app+academy], [password, password%21]]
+        .map(([key, value]) => [key, value.replace(/\+/g, " ")]) //[[username, app academy], [password, password%21]]
+        .map(([key, value]) => [key, decodeURIComponent(value)]) //[[username, app academy], [password, password!]]
         .reduce((acc, [key, value]) => {
           acc[key] = value;
           return acc;
         }, {});
+        //{username = 'app academy', password = 'password!'}
       console.log(req.body);
     }
     // Do not edit above this line
