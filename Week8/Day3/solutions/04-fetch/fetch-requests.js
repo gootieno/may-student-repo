@@ -21,7 +21,7 @@ const landingPage = async () => {
   console.log("async await data ", data);
 };
 
-landingPage()
+landingPage();
 
 /* ====== 2. Print true if the status of the response was successful ====== */
 
@@ -34,3 +34,31 @@ landingPage()
 /* ============== 4. Print the body of the response as text =============== */
 
 // Your code here
+// const getProducts = async () => {
+//   const response = await fetch("/products");
+
+//   console.log("response ", response);
+
+//   console.log("response ok? ", response.ok);
+
+//   console.log("response headers ", response.headers.get("Content-Type"));
+
+//   const responseText = await response.text();
+//   console.log("response text ", responseText);
+// };
+
+const getProducts = () => {
+  fetch("/products")
+    .then((response) => {
+      console.log("response ", response);
+
+      console.log("response ok? ", response.ok);
+
+      console.log("response headers ", response.headers.get("Content-Type"));
+
+      return response.text();
+    })
+    .then((responseData) => console.log("response data ", responseData));
+};
+
+getProducts();
