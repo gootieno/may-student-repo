@@ -54,8 +54,11 @@ const server = http.createServer((req, res) => {
     // GET /dogs
     if (req.method === 'GET' && req.url === '/dogs') {
       // Your code here
+      const responseBody = JSON.stringify(dogs);
+      res.setHeader("Content-Type", "application/json");
+      res.statusCode = 200;
 
-      return res.end();
+      return res.end(responseBody);
     }
 
     // GET /dogs/:dogId
@@ -64,23 +67,41 @@ const server = http.createServer((req, res) => {
       if (urlParts.length === 3) {
         const dogId = urlParts[2];
         // Your code here
-      }
-      return res.end();
-    }
+        const foundDog = dogs.find((dog) => dog.dogId === +dogId);
 
+        if (foundDog) {
+          res.statusCode = 200;
+          res.setHeader("Content-Type", "application/json");
+          return res.end(JSON.stringify(foundDog));
+        }
+        return res.end();
+      }
+    }
     // POST /dogs
     if (req.method === 'POST' && req.url === '/dogs') {
       const { name, age } = req.body;
       // Your code here
-      return res.end();
+      req.body.dogId = getNewDogId();
+      res.statusCode = 201;
+      res.setHeader('Content-Type', 'application/json');
+      return res.end(JSON.stringify(req.body));
     }
 
     // PUT or PATCH /dogs/:dogId
-    if ((req.method === 'PUT' || req.method === 'PATCH')  && req.url.startsWith('/dogs/')) {
+    if ((req.method === 'PUT' || req.method === 'PATCH') && req.url.startsWith('/dogs/')) {
       const urlParts = req.url.split('/');
       if (urlParts.length === 3) {
-        const dogId = urlParts[2];
+        const dogId = parseInt(urlParts[2]);
         // Your code here
+        const {name, age} = req.body;
+        const dog = dogs.find(dog => dog.dogId === +dogId);
+        req.body.dogId = dogId;
+        req.body.name = name || dog.name;
+        req.body.age = age || dog.age;
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        res.write(JSON.stringify(req.body));
+        return res.end();
       }
       return res.end();
     }
@@ -91,8 +112,16 @@ const server = http.createServer((req, res) => {
       if (urlParts.length === 3) {
         const dogId = urlParts[2];
         // Your code here
+        delDog = dogs.find((ele) => ele.dogId === Number(dogId));
+        delDogInd = dogs.indexOf(delDog);
+        dogs.splice(delDogInd, 1);
       }
-      return res.end();
+      res.statusCode = 200;
+      res.setHeader("Content-Type", "application/json");
+      resBody = {
+        message: "Successfully deleted",
+      };
+      return res.end(JSON.stringify(resBody));
     }
 
     // No matching endpoint
@@ -105,8 +134,8 @@ const server = http.createServer((req, res) => {
 
 
 if (require.main === module) {
-    const port = 8000;
-    server.listen(port, () => console.log('Server is listening on port', port));
+  const port = 8000;
+  server.listen(port, () => console.log('Server is listening on port', port));
 } else {
-    module.exports = server;
+  module.exports = server;
 }
