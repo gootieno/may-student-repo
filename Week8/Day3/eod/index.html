@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='/static' rel="stylesheet">
+    <title>Comments App</title>
+</head>
+<body>
+    <div id="comments-form-container">
+        <form action='/comments' method="post" id="comments-form">
+            <label id="comments-label" for="comment">Create a comment</label>
+            <input name="comment" id='comment-input'/>
+            <button id="comment-submit">Submit</button>
+        </form>
+    </div>
+    <div id='comments-container'>
+        <ul id="comments-list">
+            #{comments}
+        </ul>
+    </div>
+</body>
+</html>
