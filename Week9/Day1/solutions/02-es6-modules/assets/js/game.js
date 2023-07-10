@@ -1,10 +1,16 @@
+import { getIndex } from "./utilities.js";
+import { mrPotatoHeadQuotes as MrQuotes } from "./quotes/mrPotatoHead.js";
+import mrsPotatoHeadQuotes from "./quotes/mrsPotatoHead.js";
+// import * as utils from "./utilities.js";
+// console.log("utils name ", utils.name);
+
 export class Game {
   start() {
     document.getElementById("hello").addEventListener("click", () => {
       const index = getIndex();
       const messageContainer = document.getElementById("message");
       if (index === 1) {
-        messageContainer.innerText = mrPotatoHeadQuotes["hello"];
+        messageContainer.innerText = MrQuotes["hello"];
       } else {
         messageContainer.innerText = mrsPotatoHeadQuotes["hello"];
       }
@@ -14,7 +20,7 @@ export class Game {
       const index = getIndex();
       const messageContainer = document.getElementById("message");
       if (index === 1) {
-        messageContainer.innerText = mrPotatoHeadQuotes["bye"];
+        messageContainer.innerText = MrQuotes["bye"];
       } else {
         messageContainer.innerText = mrsPotatoHeadQuotes["bye"];
       }

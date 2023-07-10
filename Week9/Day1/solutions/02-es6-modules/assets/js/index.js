@@ -1,9 +1,10 @@
-import {Game} from "./game.js";
+import { Game } from "./game.js";
 import { hello } from "./game.js";
 
-
-window.onload = () => {
+const initializeGame = () => {
   const game = new Game();
   game.start();
-  hello()
+  hello();
 };
+
+window.onload = initializeGame;
