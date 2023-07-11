@@ -7,6 +7,11 @@ add.addEventListener("click", async () => {
 
     const url = data.message; // URL of new dog image
     console.log("url ", url);
+
+    const urlParts = url.split("/");
+    console.log("url parts ", urlParts);
+
+    const dogBreed = urlParts[4];
     /*--------------- Get breed (Hint: Parse from URL) ---------------- */
     // Your code here
 
@@ -26,13 +31,30 @@ add.addEventListener("click", async () => {
     */
 
     /*
-        <li>
+   <li>
             <figure>
                 <img src="https://images.dog.ceo/breeds/hound-afghan/n02088094_1007.jpg" />
                 <figcaption>hound-afghan</figcaption>
             </figure>
         </li>
-    */
+        */
+
+    // create/select elements
+
+    const ul = document.querySelector(".gallery > ul");
+    const li = document.createElement("li");
+    const figure = document.createElement("figure");
+    const img = document.createElement("img");
+    const figCaption = document.createElement("figcaption");
+
+    // set attributes/ set inner text
+    img.setAttribute("src", url);
+    figCaption.innerText = dogBreed;
+
+    figure.append(img, figCaption);
+    li.appendChild(figure);
+
+    ul.appendChild(li);
   } catch (e) {
     console.log("Couldn't fetch dog :(");
   }
@@ -45,6 +67,9 @@ removeFirst.addEventListener("click", () => {
   // Your code here
   /*-------------------- Remove the first dog card --------------------- */
   // Your code here
+  const firstDog = document.querySelector("li");
+
+  if (firstDog) firstDog.remove();
 });
 
 /************************** REMOVE LAST DOG BUTTON ***************************/
@@ -54,4 +79,9 @@ removeLast.addEventListener("click", () => {
   // Your code here
   /*-------------------- Remove the last dog card ----------------------- */
   // Your code here
+  const lastDog = document.querySelector(".gallery ul li:last-child")
+
+    if(lastDog) {
+        lastDog.remove()
+    }
 });
