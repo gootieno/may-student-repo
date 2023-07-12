@@ -96,7 +96,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   document.addEventListener("keydown", (event) => {
     if (event.keyCode === 32) {
-      alert("spacebar has been pressed");
+      alert("space bar has been pressed");
     }
   });
 });
