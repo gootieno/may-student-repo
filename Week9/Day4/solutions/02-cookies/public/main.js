@@ -3,16 +3,22 @@
 // For storing user's theme selection in cookies
 function storeTheme(themeName) {
     // Your code here
+
+    // store theme
 }
 
 // For restoring theme from cookies, if selected by the user in the past
 function restoreTheme() {
     // Your code here
+
+    // get theme from cookie
+    // if you have the theme setTheme with cookie value
 }
 
 // For clearing theme selection from cookies (reset to default)
 function clearTheme() {
     // Your code here
+    // delete the cookie
 }
 
 /* ================================ PHASE 3 ================================ */
