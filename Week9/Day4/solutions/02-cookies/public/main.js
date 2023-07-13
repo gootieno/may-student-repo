@@ -1,41 +1,33 @@
-/* ================================ PHASE 1 ================================ */
+/* ============================== PHASE 1 + 2 ============================== */
 
-// For storing user's theme selection in the browser
+// For storing user's theme selection in cookies
 function storeTheme(themeName) {
     // Your code here
-    localStorage.setItem('themeName', themeName)
 }
 
-// For restoring theme, if selected by the user in the past
+// For restoring theme from cookies, if selected by the user in the past
 function restoreTheme() {
     // Your code here
-
-    // do we have the theme stored in local storage
-    // if we do set the value by calling setTheme
-
 }
 
-// For clearing theme selection from the browser's storage (reset to default)
-
+// For clearing theme selection from cookies (reset to default)
 function clearTheme() {
     // Your code here
-
-    //target a specific theme in local storage and delete it
 }
 
-/* ================================ PHASE 2 ================================ */
+/* ================================ PHASE 3 ================================ */
 
-// For storing user's display name
+// For storing user's display name in cookies
 function storeName(displayName) {
     // Your code here
 }
 
-// For restoring user's display name, if set in the past
+// For restoring user's display name from cookies, if set in the past
 function restoreName() {
     // Your code here
 }
 
-// For clearing user's display name from browser storage
+// For clearing user's display name from cookies
 function clearName() {
     // Your code here
 }
