@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+#comments-form {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    display: inline-flex;
+    flex-direction: column;
+    width: 40%;
+    gap: 10px;
+}
+
+#comment-submit {
+    width: fit-content;
+    padding: 5px 10px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    color: teal;
+    background-color: transparent;
+}
+
+#comment-submit:hover {
+    background-color: teal;
+    color: white;
+    cursor: pointer;
+}
+
+#comments-list {
+    height: 200px;
+    overflow-y: scroll;
+    border: 1px solid black;
+    width: 40%;
+}
+
+li {
+    list-style: none;
+    padding: 10px 15px;
+    box-shadow: 0px 0px 5px gray;
+    width: 300px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
